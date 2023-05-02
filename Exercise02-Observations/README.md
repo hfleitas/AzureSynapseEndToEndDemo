@@ -3,7 +3,7 @@
 ![image](https://user-images.githubusercontent.com/59613090/193125969-460256eb-b025-4e56-8e16-ad10677b54f2.png)
 
 
-* We plan to eventually load this data into Dedicated SQL Pool in a table called [fhir].[ObservationMain].  We need to extract the data needed for the table, clean it, and write it back to ADLS.  The second activity in our pipeline handles all of this in a single Synapse Spark Notebook.
+* We plan to load this data into the Synapse Data Explorer (SDX) pool in a table called `ObservationMain`.  We need to extract the data needed for the table, clean it, and write it back to ADLS. This task will occur automatically upon ingestion by Copy Data Activity in our pipeline and leveraging a KQL function and Update Policy inside the SDX database. Optionally, the second activity in our pipeline also handles this in a single Synapse Spark Notebook and can load the data into SDX already transformed by leveraging Spark.
 ![image](https://user-images.githubusercontent.com/59613090/193125858-14673041-4408-4afb-a0f2-3017de0c4550.png)
 
 
